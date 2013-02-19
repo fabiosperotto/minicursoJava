@@ -15,9 +15,9 @@ public class Principal {
 		RadioCdPlayer cd = new RadioCdPlayer();
 		cd.ligado(1);
 		cd.aumentarVolume();
-		
+		cd.alterarFaixa();
+		cd.diminuirVolume();
 		
 
 	}
-
 }
