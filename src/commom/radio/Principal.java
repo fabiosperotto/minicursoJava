@@ -15,13 +15,10 @@ public class Principal {
 		cd.aumentarVolume();
 		cd.alterarFaixa();
 		cd.diminuirVolume();
-
-		System.out.println("Freq.: "+radio1.getFrequencia());
-		radio1.alterarFrequencia(); //100.1
-		radio1.alterarFrequencia(); //101.5
-		radio1.alterarFrequencia(); //error
-		System.out.println("Freq.: "+radio1.getFrequencia());
-		
+		cd.alterarFaixa();
+		cd.alterarFaixa();
+		cd.alterarFaixa();
+		cd.alterarFaixa();
 
 		
 

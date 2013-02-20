@@ -6,15 +6,7 @@ public class RadioAMFM implements Radio {
 	
 	private int ligado;
 	
-	public void setLigado(int ligar){
-		this.ligado = ligar;
-	}
-	
-	public int getLigado(){
-		return this.ligado;
-	}
-	
-	private int volumeAtual = 50; //0 a 100
+	public int volumeAtual = 50; //0 a 100
 	private double frequenciaAtual = 99.0;
 	
 	//arrays/matrizes:
@@ -34,7 +26,7 @@ public class RadioAMFM implements Radio {
 	}
 	
 	/**
-	 * Intro
+	 * Introdução ao método
 	 * @param ligar
 	 */
 	public RadioAMFM(int ligar){
@@ -90,64 +82,8 @@ public class RadioAMFM implements Radio {
 		}
 	}
 	
-	public void alterarFrequencia(){
+	public void alterarFrequencia(){		
 		
-		try{
-			for(int i=0; i<this.faixasFrequencia.length; i++){
-				
-				if(this.frequenciaAtual == this.faixasFrequencia[i]){
-					this.frequenciaAtual = this.faixasFrequencia[i+1];
-					break;
-					
-				}
-				
-			}
-			
-		}catch(Exception erro){
-			
-			System.out.println("Fim da faixa de frequencias");
-			//outra classe
-			//fazer outras operações
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*
-		double frequencia = this.frequenciaAtual;
-		
-		for(int i = 0; i < this.faixasFrequencia.length; i++ ){
-			
-			if(this.faixasFrequencia[i] == frequencia){
-				
-				if(i == this.faixasFrequencia.length){
-					this.frequenciaAtual = this.faixasFrequencia[0];
-					break;
-					
-				}else{
-					
-					this.frequenciaAtual = this.faixasFrequencia[i+1];
-					break;
-				}
-			}
-		}
-		*/
 	}
 	
 }

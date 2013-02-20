@@ -37,39 +37,8 @@ public class RadioCdPlayer extends RadioAMFM implements CDPlayer {
 	}
 	public void alterarFaixa(){
 		
-		//cd jah foi inserido?	
-		/*
-		for(int i = 0; i <= faixasCD.length; i++){
-			
-			if(this.faixasCD[i] == this.faixaAtual){
-				
-				if(this.faixaAtual == this.faixasCD[i]){
-					this.faixaAtual = 1;
-					System.out.println("Indo para... "+this.faixaAtual);
-					break;
-				}else{
-					this.faixaAtual = this.faixasCD[i+1];
-					System.out.println("Indo para... "+this.faixaAtual);
-					break;
-				}												
-			}
-		}
-		*/
-		try{
-			
-			for(int i = 0; i <= faixasCD.length; i++){
-				
-				if(this.faixaAtual == this.faixasCD[i]){
-					this.faixaAtual = this.faixasCD[i+1];
-					System.out.println("Indo para... "+this.faixaAtual);
-					break;
-				}				
-			}
-		}catch(Exception erro){
-			erro.printStackTrace();
-			//System.out.println("Não é possivel avançar mais");
-			
-		}
+		//cd jah foi inserido?
+		//fazer exercicio 3 apostila
 	}
 
 }
