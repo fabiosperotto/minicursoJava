@@ -1,19 +1,45 @@
 package commom.radio;
 
+import java.util.ArrayList;
+
 public class RadioAMFM implements Radio {
 	
 	private int ligado;
-	public int volumeAtual = 50; //0 a 100
-	private double frequenciaAtual = 99.0;
-	public double faixasFrequencia[] = {98.2,99.0,100.1,101.5};
 	
-	
-	public RadioAMFM(){
-		
+	public void setLigado(int ligar){
+		this.ligado = ligar;
 	}
 	
+	public int getLigado(){
+		return this.ligado;
+	}
+	
+	private int volumeAtual = 50; //0 a 100
+	private double frequenciaAtual = 99.0;
+	
+	//arrays/matrizes:
+	//public double[] faixasFrequencia = new double[3];
+	//ou
+	public double faixasFrequencia[] = {98.2,99.0,100.1,101.5};
+	
+	//ArrayList
+	//ArrayList faixasFrequencia = new ArrayList();
+	
+	public RadioAMFM(){
+
+	}
+	
+	public double getFrequencia(){
+		return this.frequenciaAtual;
+	}
+	
+	/**
+	 * Intro
+	 * @param ligar
+	 */
 	public RadioAMFM(int ligar){
-		this.ligado(ligar);
+		this.ligado(ligar);		
+		
 	}
 	
 	/**
@@ -23,7 +49,6 @@ public class RadioAMFM implements Radio {
 	public void ligado(int valorLigado){
 		this.ligado = valorLigado;
 		System.out.println("Estou ligado");
-		
 	}
 	
 	/**
@@ -67,9 +92,62 @@ public class RadioAMFM implements Radio {
 	
 	public void alterarFrequencia(){
 		
-		//utilizar this.faixasFrequencia
-		//ao chamar este método, mudar de frequencia
-		// e inserir o novo valor em this.frequenciaAtual
+		try{
+			for(int i=0; i<this.faixasFrequencia.length; i++){
+				
+				if(this.frequenciaAtual == this.faixasFrequencia[i]){
+					this.frequenciaAtual = this.faixasFrequencia[i+1];
+					break;
+					
+				}
+				
+			}
+			
+		}catch(Exception erro){
+			
+			System.out.println("Fim da faixa de frequencias");
+			//outra classe
+			//fazer outras operações
+		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		double frequencia = this.frequenciaAtual;
+		
+		for(int i = 0; i < this.faixasFrequencia.length; i++ ){
+			
+			if(this.faixasFrequencia[i] == frequencia){
+				
+				if(i == this.faixasFrequencia.length){
+					this.frequenciaAtual = this.faixasFrequencia[0];
+					break;
+					
+				}else{
+					
+					this.frequenciaAtual = this.faixasFrequencia[i+1];
+					break;
+				}
+			}
+		}
+		*/
 	}
+	
 }
