@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 
 import commom.radio.RadioAMFM;
 
+//podemos ter varios Frames, uma classe para cada tela do sistema:
 public class TesteSwing extends JFrame implements ActionListener{
 	
 	private JButton botao1, botao2, botao3;
@@ -84,7 +85,7 @@ public class TesteSwing extends JFrame implements ActionListener{
 		
 		this.setJMenuBar(barraFerramentas);
 		this.getContentPane().add(janela);
-		//this.pack();
+		//this.pack(); //utilizar este metodo para que o JFrame empacote os componentes, nao utilizar com setLyaout(null) + setsize()
 		this.setSize(320,400); //X,Y
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,9 +94,10 @@ public class TesteSwing extends JFrame implements ActionListener{
 		
 	}
 	
+	//metodo para tratar os eventos que ocorrerem nos componentes:
 	public void actionPerformed(ActionEvent evento){
 		
-		Object acao = evento.getSource();
+		Object acao = evento.getSource(); //objeto acao guarda qual objeto esta sofrendo acao
 		
 		if(acao == botao1){
 			this.radio = new RadioAMFM();
