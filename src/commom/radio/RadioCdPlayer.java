@@ -20,13 +20,14 @@ public class RadioCdPlayer extends RadioAMFM implements CDPlayer {
 	
 	public void inserirCD(){
 		this.cdInserido = 1;
-		//double quantFaixas = Math.random();
 		System.out.println("Cd Player Ligado");
 	}
 	
 	public void desligarCD(){
 		this.cdInserido = 0;
+		this.faixaAtual = 0;
 		System.out.println("Sem CD");
+		
 		
 	}
 	public int faixaAtual(){
@@ -35,10 +36,36 @@ public class RadioCdPlayer extends RadioAMFM implements CDPlayer {
 		
 		
 	}
+	
+	public String nomeMusica(){
+		String musica;
+		musica = "Musica - "+this.faixaAtual;
+		return musica;
+	}
+	
 	public void alterarFaixa(){
 		
 		//cd jah foi inserido?
-		//fazer exercicio 3 apostila
-	}
+		if(this.cdInserido != 0){
+			try{
+				
+				for(int i=0; i<= this.faixasCD.length; i++){
+					
+					if(this.faixaAtual == this.faixasCD[i]){
+						this.faixaAtual = this.faixasCD[i+1];
+						break;
+					}
+					
+				}
+				
+			}catch(Exception erro){
+				//erro.printStackTrace();
+				this.faixaAtual = this.faixasCD[0];
+				
+			}
 
+		}else{
+			System.out.println("Insira CD");
+		}
+	}
 }

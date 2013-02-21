@@ -5,8 +5,7 @@ import java.util.ArrayList;
 public class RadioAMFM implements Radio {
 	
 	private int ligado;
-	
-	public int volumeAtual = 50; //0 a 100
+	private int volumeAtual = 50; //0 a 100
 	private double frequenciaAtual = 99.0;
 	
 	//arrays/matrizes:
@@ -21,10 +20,6 @@ public class RadioAMFM implements Radio {
 
 	}
 	
-	public double getFrequencia(){
-		return this.frequenciaAtual;
-	}
-	
 	/**
 	 * Introdução ao método
 	 * @param ligar
@@ -33,7 +28,22 @@ public class RadioAMFM implements Radio {
 		this.ligado(ligar);		
 		
 	}
+		
+	public int getVolumeAtual() {
+		return volumeAtual;
+	}
+
+	public void setVolumeAtual(int volumeAtual) {
+		this.volumeAtual = volumeAtual;
+	}
+
+	public double getFrequencia(){
+		return this.frequenciaAtual;
+	}
 	
+	
+	//MELHORIA: corrigir métodos ligado() desligado()
+	// substituir por getters and setters, excluindo desnecessário
 	/**
 	 * Método para verificar se rádio está ligado.
 	 * @param valorLigado valor para definir estado de ligado/desligado
@@ -84,6 +94,28 @@ public class RadioAMFM implements Radio {
 	
 	public void alterarFrequencia(){		
 		
+		double frequencia = this.frequenciaAtual;
+		
+		for(int i=0; i<this.faixasFrequencia.length; i++){
+			
+			if(frequencia == this.faixasFrequencia[i]){
+				
+				if(i+1 == this.faixasFrequencia.length){
+					
+					this.frequenciaAtual = this.faixasFrequencia[0];
+					break;
+					
+				}else{
+					
+					this.frequenciaAtual = this.faixasFrequencia[i+1];
+					break;
+				}		
+			}
+		}
+	}
+	
+	public void display(String info){
+		System.out.println(info);
 	}
 	
 }
