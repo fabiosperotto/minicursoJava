@@ -107,7 +107,7 @@ public class TesteSwing extends JFrame implements ActionListener{
 		}
 		
 		if(acao == menuItem2){
-			JOptionPane.showMessageDialog(null, "URRA, aprendendo Java com Swing!");
+			JOptionPane.showMessageDialog(null, "Olá, sou uma caixa de diálogo!");
 		}
 		
 		if(acao == botao2){
